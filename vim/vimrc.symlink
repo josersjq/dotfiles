@@ -13,7 +13,7 @@ set cursorline
 set listchars=tab:——,trail:·,extends:>,precedes:<,nbsp:%
 set list
 set linebreak
-set showbreak=+++
+set showbreak=...
 
 set number
 
