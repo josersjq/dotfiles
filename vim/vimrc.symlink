@@ -49,6 +49,10 @@ map <C-K> <C-W>k<C-W>_
 map <C-H> <C-W>h<C-W>_
 map <C-L> <C-W>l<C-W>_
 
+" Split Settings
+set splitright
+set splitbelow
+
 " Tab Navigation
 nnoremap th :tabprev<CR>
 nnoremap tl :tabnext<CR>
