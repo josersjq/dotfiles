@@ -7,10 +7,15 @@ set undolevels=250
 set textwidth=100
 set showmatch
 set visualbell
+set textwidth=100
+set cursorline
 
-" List Characters
 set listchars=tab:——,trail:·,extends:>,precedes:<,nbsp:%
 set list
+set linebreak
+set showbreak=+++
+
+set number
 
 " Search
 set hlsearch
