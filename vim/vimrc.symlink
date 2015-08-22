@@ -1,7 +1,24 @@
+" General Settings
+syntax on
+
+set encoding=utf-8
+set ttyfast
+set undolevels=250
+set textwidth=100
+set showmatch
+set visualbell
+
+" List Characters
+set listchars=tab:——,trail:·,extends:>,precedes:<,nbsp:%
+set list
+
+" Search
+set hlsearch
+set smartcase
+set incsearch
+
 " Tab Control
 set ts=4 sw=4 et
-
-syntax on
 
 " Disable Backup files
 set nobackup
@@ -21,4 +38,8 @@ inoremap <down>  <nop>
 inoremap <left>  <nop>
 inoremap <right> <nop>
 
-set ttyfast
+" Split Screen Navigation CTRL+hjkl
+map <C-J> <C-W>j<C-W>_
+map <C-K> <C-W>k<C-W>_
+map <C-H> <C-W>h<C-W>_
+map <C-L> <C-W>l<C-W>_
