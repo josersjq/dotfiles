@@ -1,5 +1,9 @@
+" Tab Control
+set ts=4 sw=4 et
+
 syntax on
 
+" Disable Backup files
 set nobackup
 set nowritebackup
 set noswapfile
