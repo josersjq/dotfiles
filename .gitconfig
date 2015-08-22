@@ -1,0 +1,8 @@
+[user]
+	name = Jose
+	email = sanjuanjojo@gmail.com
+	username = josersjq
+[core]
+	editor = vim
+[push]
+	default = simple
