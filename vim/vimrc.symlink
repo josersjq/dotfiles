@@ -89,4 +89,5 @@ nnoremap td :tabclose<CR>
 " NERDTree
 let g:NERDTreeQuitOnOpen=0
 let NERDTreeShowHidden=1
+let g:NERDTreeWinPos = "right"
 nmap <leader>ne :NERDTree<CR>
