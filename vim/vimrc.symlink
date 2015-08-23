@@ -17,6 +17,9 @@ set showbreak=...
 
 set number
 
+" Disable .viminfo
+set viminfo="NONE"
+
 " Search
 set hlsearch
 set smartcase
