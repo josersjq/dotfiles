@@ -35,6 +35,8 @@ set listchars=tab:——,trail:·,extends:>,precedes:<,nbsp:%
 set list
 set linebreak
 set showbreak=...
+let mapleader = ","
+
 
 set number
 
@@ -83,3 +85,8 @@ nnoremap tl :tabnext<CR>
 nnoremap tn :tabnew<CR>
 nnoremap tt :tabedit<CR>
 nnoremap td :tabclose<CR>
+
+" NERDTree
+let g:NERDTreeQuitOnOpen=0
+let NERDTreeShowHidden=1
+nmap <leader>ne :NERDTree<CR>
