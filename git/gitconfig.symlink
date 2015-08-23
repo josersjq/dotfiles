@@ -1,7 +1,8 @@
 [user]
-    name = Jose
+    name = Jose San Juan
     email = sanjuanjojo@gmail.com
-    username = josersjq
+[github]
+	user = josersjq
 [core]
     editor = vim
 [push]
@@ -34,3 +35,4 @@
     ps = push
 
     us = reset HEAD
+
