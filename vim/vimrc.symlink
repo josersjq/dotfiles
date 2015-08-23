@@ -9,6 +9,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 
+" Colorscheme
+Plugin 'morhetz/gruvbox'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -16,6 +19,8 @@ filetype plugin indent on
 " General Settings
 syntax on
 se t_Co=256
+set background=dark
+colorscheme gruvbox
 
 set encoding=utf-8
 set ttyfast
