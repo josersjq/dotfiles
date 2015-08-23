@@ -8,6 +8,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
 
 " Colorscheme
 Plugin 'morhetz/gruvbox'
@@ -95,3 +96,6 @@ nmap <leader>n :NERDTreeToggle<CR>
 " ctrlp
 let g:ctrlp_show_hidden=1
 let g:ctrlp_custom_ignore = '.git\|node_modules\|bower_components\|__pycache__\|tmp\'
+
+" Airline
+let g:airline_powerline_fonts = 1
