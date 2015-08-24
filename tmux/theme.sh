@@ -1,20 +1,23 @@
-#### COLOUR
+#!/bin/bash
 
 tm_icon="♟"
-tm_color_active=colour213
+tm_color_background=colour234
+tm_color_active=colour118
 tm_color_inactive=colour241
 tm_color_feature=colour4
 tm_color_music=colour203
 
 # separators
-tm_separator_left_bold="◀"
-tm_separator_left_thin="❮"
-tm_separator_right_bold="▶"
-tm_separator_right_thin="❯"
+tm_left_separator=''
+tm_left_separator_black=''
+tm_right_separator=''
+tm_right_separator_black=''
+tm_session_symbol=''
 
 set -g status-left-length 32
 set -g status-right-length 150
 set -g status-interval 5
+
 
 # default statusbar colors
 # set-option -g status-bg colour0
@@ -28,9 +31,8 @@ set-window-option -g window-status-bg default
 set -g window-status-format "#I #W"
 
 # active window title colors
-set-window-option -g window-status-current-fg $tm_color_active
-set-window-option -g window-status-current-bg default
-set-window-option -g  window-status-current-format "#[bold]#I #W"
+set-window-option -g  window-status-current-format
+"#[fg=$tm_color_background,bg=$tm_color_active]$tm_left_separator_black #[fg=colour0,bg=$tm_color_active,bold]#I #W #[bg=$tm_color_background,fg=$tm_color_active]$tm_left_separator_black "
 
 # pane border
 set-option -g pane-border-fg $tm_color_inactive
@@ -44,12 +46,9 @@ set-option -g message-fg $tm_color_active
 set-option -g display-panes-active-colour $tm_color_active
 set-option -g display-panes-colour $tm_color_inactive
 
-# clock
-set-window-option -g clock-mode-colour $tm_color_active
+tm_date="#[bg=colour255,fg=$tm_color_inactive]$tm_right_separator_black#[bg=$tm_color_inactive,fg=$tm_color_background] %R %d %b"
+tm_host="#[bg=$tm_color_inactive,fg=$tm_color_feature]$tm_right_separator_black#[bg=$tm_color_feature,fg=$tm_color_background,bold] #h "
+tm_session_name="#[bg=$tm_color_feature,fg=$tm_color_background,bold]$tm_icon #S #[fg=$tm_color_feature,bg=default,nobold]$tm_left_separator_black"
 
-tm_date="#[fg=$tm_color_inactive] %R %d %b"
-tm_host="#[fg=$tm_color_feature,bold]#h"
-tm_session_name="#[fg=$tm_color_feature,bold]$tm_icon #S"
-
-set -g status-left $tm_session_name' '
+set -g status-left $tm_session_name
 set -g status-right $tm_date' '$tm_host
