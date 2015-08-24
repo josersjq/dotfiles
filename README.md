@@ -1,6 +1,6 @@
 # Dotfiles
 
-For a happier, speedy, productive workflow! Still working on it though..
+In pursuit of Configuration Happyness!
 
 ## Contents
 
