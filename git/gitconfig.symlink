@@ -12,6 +12,7 @@
     aa = add
 
     s = status --short
+    sb = status --short --branch
     ss = status
 
     c = commit -m
