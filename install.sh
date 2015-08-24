@@ -7,4 +7,7 @@ git submodule update --init --recursive
 
 source install/link.sh
 
-echo "Installation Complete!"
+echo "Configuring zsh as default shell"
+chsh -s $(which zsh)
+
+echo "Done!"
