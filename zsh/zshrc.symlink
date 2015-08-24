@@ -1,0 +1,33 @@
+export DOTFILES=$HOME/.dotfiles
+export ZSH=$DOTFILES/zsh
+
+# display how long all tasks over 10 seconds take
+export REPORTTIME=10
+# define the code directory
+if [[ -d ~/code ]]; then
+    export CODE_DIR=~/code
+fi
+
+# load all zsh config files
+for config ($ZSH/*.zsh) source $config
+
+if [[ -a ~/.localrc ]]; then
+    source ~/.localrc
+fi
+
+# initialize autocomplete
+autoload -U compinit
+compinit
+
+export EDITOR='vim'
+
+export PATH=/usr/local/bin:$PATH
+
+# add /usr/local/sbin
+if [[ -d /usr/local/sbin ]]; then
+    export PATH=/usr/local/sbin:$PATH
+fi
+
+[ -z "$TMUX" ] && export TERM=xterm-256color
+
+
