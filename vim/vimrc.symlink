@@ -9,6 +9,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-surround'
+Plugin 'mattn/emmet-vim'
 
 " Colorscheme
 Plugin 'morhetz/gruvbox'
@@ -99,3 +101,8 @@ let g:ctrlp_custom_ignore = '.git\|node_modules\|bower_components\|__pycache__\|
 
 " Airline
 let g:airline_powerline_fonts = 1
+
+" Emmet
+" imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+" let g:user_emmet_leader_key='<C-E>'
+let user_emmet_expandabbr_key='<c-e>'
