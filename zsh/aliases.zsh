@@ -4,14 +4,6 @@ alias reload!='source ~/.zshrc'
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
     colorflag="--color"
-
-else # OS X `ls`
-    colorflag="-G"
-fi
-
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-    colorflag="--color"
 else # OS X `ls`
     colorflag="-G"
 fi
@@ -22,12 +14,11 @@ alias ...='cd ../..'
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-alias l="ls -lah ${colorflag}"
+alias l="ls -lFh ${colorflag}"
 alias la="ls -AF ${colorflag}"
-alias ll="ls -lFh ${colorflag}"
-alias lld="ls -l | grep ^d"
+alias ll="ls -lah ${colorflag}"
 
-# tmux
+# tmux aliases
 alias tmux='tmux -2'
 alias ta='tmux attach'
 alias tls='tmux ls'
