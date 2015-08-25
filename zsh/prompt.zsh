@@ -43,6 +43,10 @@ suspended_jobs() {
         echo "%F{208}✱%f"
     fi
 }
+__virtualenv() {
+  local env=$(basename "$VIRTUAL_ENV")
+  [ "$env" != "" ] && echo "%F{blue}⏏%f %F{241}$env%f"
+}
 __node() {
   if hash node 2>/dev/null; then
       local v=$(node -v)
@@ -56,4 +60,4 @@ precmd() {
 }
 
 export PROMPT='%(?.%F{119}.%F{red})➤%f  '
-export RPROMPT='`git_dirty`%F{241}$vcs_info_msg_0_%f`needs_push``suspended_jobs``__node`'
+export RPROMPT='`__virtualenv``__node``git_dirty`%F{241}$vcs_info_msg_0_%f`needs_push``suspended_jobs`'
