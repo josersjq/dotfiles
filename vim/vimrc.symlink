@@ -40,7 +40,7 @@ set listchars=tab:——,trail:·,extends:>,precedes:<,nbsp:%
 set list
 set linebreak
 set showbreak=...
-let mapleader = ","
+let mapleader=","
 
 
 set number
@@ -62,17 +62,18 @@ set nowritebackup
 set noswapfile
 
 " Normal mode map ; to :
-nnoremap ; :
+nn ; :
 
 " Disalbe Arrow keys
-nnoremap <up>    <nop>
-nnoremap <down>  <nop>
-nnoremap <left>  <nop>
-nnoremap <right> <nop>
-inoremap <up>    <nop>
-inoremap <down>  <nop>
-inoremap <left>  <nop>
-inoremap <right> <nop>
+map <up>    <nop>
+map <down>  <nop>
+map <left>  <nop>
+map <right> <nop>
+ino <up> <nop>
+ino <down> <nop>
+ino <left> <nop>
+ino <right> <nop>
+
 
 " Split Screen Navigation CTRL+hjkl
 map <C-J> <C-W>j<C-W>_
@@ -85,17 +86,17 @@ set splitright
 set splitbelow
 
 " Tab Navigation
-nnoremap th :tabprev<CR>
-nnoremap tl :tabnext<CR>
-nnoremap tn :tabnew<CR>
-nnoremap tt :tabedit<CR>
-nnoremap td :tabclose<CR>
+nn th :tabprev<CR>
+nn tl :tabnext<CR>
+nn tn :tabnew<CR>
+nn tt :tabedit<CR>
+nn td :tabclose<CR>
 
 " NERDTree
 let g:NERDTreeQuitOnOpen=0
 let NERDTreeShowHidden=1
 let g:NERDTreeWinPos = "right"
-nmap <leader>n :NERDTreeToggle<CR>
+nm <leader>n :NERDTreeToggle<CR>
 
 " ctrlp
 let g:ctrlp_show_hidden=1
@@ -110,5 +111,5 @@ let g:airline_powerline_fonts = 1
 let user_emmet_expandabbr_key='<c-e>'
 
 " vim-commentary
-nmap <leader>, :Commentary<CR>
-xmap <leader>, :Commentary<CR>
+nm <C-c> gc
+xm <C-c> gc
