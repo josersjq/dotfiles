@@ -11,6 +11,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'Raimondi/delimitMate'
 
 " Colorscheme
 Plugin 'morhetz/gruvbox'
