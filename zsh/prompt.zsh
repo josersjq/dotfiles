@@ -40,17 +40,18 @@ suspended_jobs() {
     if [[ $sj == "" ]]; then
         echo ""
     else
-        echo "%F{208}✱%f"
+        echo "%F{208}✱%f "
     fi
 }
 __virtualenv() {
-  local env=$(basename "$VIRTUAL_ENV")
+  local env
+  env=$(basename "$VIRTUAL_ENV")
   [ "$env" != "" ] && echo "%F{blue}⏏%f %F{241}$env%f"
 }
 __node() {
   if hash node 2>/dev/null; then
-      local v=$(node -v)
-    fi
+     local v=$(node -v)
+  fi
   [ "$v" != "" ] && echo "%F{green}◉%f %F{241}${v:1}%f"
 }
 
@@ -60,4 +61,4 @@ precmd() {
 }
 
 export PROMPT='%(?.%F{119}.%F{red})➤%f  '
-export RPROMPT='`__virtualenv``__node``git_dirty`%F{241}$vcs_info_msg_0_%f`needs_push``suspended_jobs`'
+export RPROMPT='`suspended_jobs``__virtualenv``__node``needs_push``git_dirty`%F{241}$vcs_info_msg_0_%f'
