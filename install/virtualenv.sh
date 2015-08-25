@@ -2,6 +2,6 @@
 
 if [ -d $HOME/.virtualenvs ]; then
     echo "Configure virtualenv prompt"
-    cat "$HOME/.dotfiles/virtualenv/postactivate" > "$HOME/.virtualenv/postactivate"
-    cat "$HOME/.dotfiles/virtualenv/postdeactivate" > "$HOME/.virtualenv/postdeactivate"
+    cat "$HOME/.dotfiles/virtualenvs/postactivate" > "$HOME/.virtualenvs/postactivate"
+    cat "$HOME/.dotfiles/virtualenvs/postdeactivate" > "$HOME/.virtualenvs/postdeactivate"
 fi
