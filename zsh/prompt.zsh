@@ -30,7 +30,7 @@ needs_push() {
   then
     echo ""
   else
-    echo "%{$fg_bold[magenta]%}☁%f "
+    echo "%{$fg_bold[magenta]☁%f "
   fi
 }
 
