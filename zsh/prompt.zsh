@@ -43,6 +43,12 @@ suspended_jobs() {
         echo "%F{208}✱%f"
     fi
 }
+__node() {
+  if hash node 2>/dev/null; then
+      local v=$(node -v)
+    fi
+  [ "$v" != "" ] && echo "%F{green}◉%f %F{241}${v:1}%f"
+}
 
 precmd() {
     vcs_info
@@ -50,4 +56,4 @@ precmd() {
 }
 
 export PROMPT='%(?.%F{119}.%F{red})➤%f  '
-export RPROMPT='`git_dirty`%F{241}$vcs_info_msg_0_%f `needs_push``suspended_jobs`'
+export RPROMPT='`git_dirty`%F{241}$vcs_info_msg_0_%f`needs_push``suspended_jobs``__node`'
