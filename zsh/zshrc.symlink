@@ -38,7 +38,18 @@ fi
 # virtualenvwrapper settings
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-source /usr/local/bin/virtualenvwrapper.sh
+
+if [ -f /usr/bin/virtualenvwrapper.sh ]; then
+      export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
+elif [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+      export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+fi
+
+if [ -f /usr/bin/virtualenvwrapper_lazy.sh ]; then
+      source /usr/bin/virtualenvwrapper_lazy.sh
+elif [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
+      source /usr/local/bin/virtualenvwrapper_lazy.sh
+fi
 
 # nvm settings
 export NVM_DIR="$HOME/.nvm"
