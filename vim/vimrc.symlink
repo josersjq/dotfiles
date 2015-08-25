@@ -108,3 +108,7 @@ let g:airline_powerline_fonts = 1
 " imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 " let g:user_emmet_leader_key='<C-E>'
 let user_emmet_expandabbr_key='<c-e>'
+
+" vim-commentary
+nmap <leader>, :Commentary<CR>
+xmap <leader>, :Commentary<CR>
