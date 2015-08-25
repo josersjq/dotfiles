@@ -30,6 +30,11 @@ fi
 
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
+# Load SSH Keys
+if [ -f $DOTFILES/sys/load_ssh_identities.sh ]; then
+    source $DOTFILES/sys/load_ssh_identities.sh
+fi
+
 # virtualenvwrapper settings
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
