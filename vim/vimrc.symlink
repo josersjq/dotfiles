@@ -1,8 +1,8 @@
 " Vundle
-set nocompatible
+se nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
+se rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
@@ -24,57 +24,57 @@ filetype plugin indent on
 " General Settings
 syntax on
 se t_Co=256
-set background=dark
+se background=dark
 colorscheme gruvbox
 
-set encoding=utf-8
-set ttyfast
-set undolevels=250
-set textwidth=100
-set showmatch
-set visualbell
-set textwidth=100
-set cursorline
+se encoding=utf-8
+se ttyfast
+se undolevels=250
+se textwidth=100
+se showmatch
+se visualbell
+se textwidth=100
+se cursorline
 
-set listchars=tab:——,trail:·,extends:>,precedes:<,nbsp:%
-set list
-set linebreak
-set showbreak=...
+se listchars=tab:——,trail:·,extends:>,precedes:<,nbsp:%
+se list
+se linebreak
+se showbreak=...
 let mapleader=","
 
 " Save the file as sudo then reload it manually with `:edit!`
-noremap <Leader>W :silent w !sudo tee % > /dev/null
+nn <Leader>W :silent w !sudo tee % > /dev/null
 
 " Clear the last search highlights
-noremap <Leader>c :noh<CR>
+nn <Leader>c :noh<CR>
 
 " Reload vimrc
-noremap <Leader>R :so ~/.vimrc<CR>
+nn <Leader>R :so ~/.vimrc<CR>
 
 
-set number
+se number
 
 " Disable .viminfo
-set viminfo="NONE"
+se viminfo="NONE"
 
 " Search
-set hlsearch
-set smartcase
-set incsearch
+se hlsearch
+se smartcase
+se incsearch
 
 " Tab Control
-set ts=4 sw=4 et ai sts=4
+se ts=4 sw=4 et ai sts=4
 
 " Python Highly Recommends in https://code.djangoproject.com/wiki/UsingVimWithDjango
-au FileType python set sw=4
-au FileType python set ts=4
-au FileType python set sts=4
-au FileType python set colorcolumn=80,100
+au FileType python se sw=4
+au FileType python se ts=4
+au FileType python se sts=4
+au FileType python se colorcolumn=80,100
 
 " Disable Backup files
-set nobackup
-set nowritebackup
-set noswapfile
+se nobackup
+se nowritebackup
+se noswapfile
 
 " Normal mode map ; to :
 nn ; :
@@ -97,8 +97,8 @@ map <C-H> <C-W>h<C-W>_
 map <C-L> <C-W>l<C-W>_
 
 " Split Settings
-set splitright
-set splitbelow
+se splitright
+se splitbelow
 
 " Tab Navigation
 nn th :tabprev<CR>
@@ -118,7 +118,7 @@ let g:ctrlp_show_hidden=1
 let g:ctrlp_custom_ignore = '.git\|node_modules\|bower_components\|__pycache__\|tmp\'
 
 " Airline
-let g:airline_powerline_fonts = 1
+" se laststatus=2 " se airline to appear all time
 
 " Emmet
 " imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
