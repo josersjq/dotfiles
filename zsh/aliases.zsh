@@ -23,6 +23,7 @@ alias apt-get="sudo apt-get"
 # tmux aliases
 alias tmux='tmux -2'
 alias ta='tmux attach'
+alias td='tmux detach'
 alias tls='tmux ls'
 alias tat='tmux attach -t'
 alias tns='tmux new-session -s'
