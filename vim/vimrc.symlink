@@ -118,10 +118,11 @@ let g:ctrlp_custom_ignore = '.git\|node_modules\|bower_components\|__pycache__\|
 
 " Airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme='powerlineish'
+let g:airline_theme='tomorrow'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_min_count = 2
-" se laststatus=2 " se airline to appear all time
+let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline#extensions#tabline#show_buffers = 0
+" se laststatus=2 " set airline to appear at status all time 
 
 " Emmet
 " imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
