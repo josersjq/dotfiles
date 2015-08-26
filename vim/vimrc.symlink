@@ -117,6 +117,10 @@ let g:ctrlp_show_hidden=1
 let g:ctrlp_custom_ignore = '.git\|node_modules\|bower_components\|__pycache__\|tmp\'
 
 " Airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme='powerlineish'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_min_count = 2
 " se laststatus=2 " se airline to appear all time
 
 " Emmet
