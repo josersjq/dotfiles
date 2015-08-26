@@ -43,14 +43,13 @@ se showbreak=...
 let mapleader=","
 
 " Save the file as sudo then reload it manually with `:edit!`
-nn <Leader>W :silent w !sudo tee % > /dev/null
+no <Leader>W :silent w !sudo tee % > /dev/null
 
 " Clear the last search highlights
-nn <Leader>c :noh<CR>
+no <Leader>c :noh<CR>
 
 " Reload vimrc
-nn <Leader>R :so ~/.vimrc<CR>
-
+no <Leader>R :so ~/.vimrc<CR>
 
 se number
 
