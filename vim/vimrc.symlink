@@ -57,10 +57,10 @@ set incsearch
 set ts=4 sw=4 et ai sts=4
 
 " Python Highly Recommends in https://code.djangoproject.com/wiki/UsingVimWithDjango
-autocmd FileType python set sw=4
-autocmd FileType python set ts=4
-autocmd FileType python set sts=4
-autocmd FileType python set colorcolumn=80,100
+au FileType python set sw=4
+au FileType python set ts=4
+au FileType python set sts=4
+au FileType python set colorcolumn=80,100
 
 " Disable Backup files
 set nobackup
