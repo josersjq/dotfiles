@@ -42,6 +42,15 @@ set linebreak
 set showbreak=...
 let mapleader=","
 
+" Save the file as sudo then reload it manually with `:edit!`
+noremap <Leader>W :silent w !sudo tee % > /dev/null
+
+" Clear the last search highlights
+noremap <Leader>c :noh<CR>
+
+" Reload vimrc
+noremap <Leader>R :so ~/.vimrc<CR>
+
 
 set number
 
@@ -116,6 +125,6 @@ let g:airline_powerline_fonts = 1
 " let g:user_emmet_leader_key='<C-E>'
 let user_emmet_expandabbr_key='<c-e>'
 
-" vim-commentary
+" vim-commentary to Ctrl+C
 nm <C-c> gc
 xm <C-c> gc
