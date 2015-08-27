@@ -8,13 +8,16 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
+Plugin 'vim-scripts/gitignore'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'terryma/vim-expand-region'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'mattn/emmet-vim'
 Plugin 'Raimondi/delimitMate'
-Plugin 'christoomey/vim-tmux-navigator'
+
 
 " Colorscheme
 Plugin 'morhetz/gruvbox'
@@ -43,6 +46,19 @@ se list
 se linebreak
 se showbreak=...
 let mapleader=","
+
+" Expand Visual mode
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+" Command Line to quit
+map q: :q
+
+" Save file
+nn <Leader>w :w<CR>
+
+" Visual line
+nmap <Leader><Leader> V
 
 " Save the file as sudo then reload it manually with `:edit!`
 no <Leader>W :silent w !sudo tee % > /dev/null
@@ -126,7 +142,18 @@ nm <leader>n :NERDTreeToggle<CR>
 
 " ctrlp
 let g:ctrlp_show_hidden=1
-let g:ctrlp_custom_ignore = '.git\|node_modules\|bower_components\|__pycache__\|tmp\'
+" let g:ctrlp_custom_ignore = '.git\|node_modules\|bower_components\|__pycache__\|tmp\'
+let g:ctrlp_use_caching = 0
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+else
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+  let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
+    \ }
+endif
 
 " Airline
 let g:airline_powerline_fonts = 1
