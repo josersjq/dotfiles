@@ -18,14 +18,13 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-repeat'
 Plugin 'mattn/emmet-vim'
 Plugin 'Raimondi/delimitMate'
-
+Plugin 'scrooloose/syntastic'
 
 " Colorscheme
 Plugin 'morhetz/gruvbox'
 
 call vundle#end()
 filetype plugin indent on
-
 
 " General Settings
 syntax on
@@ -182,3 +181,14 @@ let user_emmet_expandabbr_key='<c-e>'
 " vim-commentary to Ctrl+C
 nm <C-c> gc
 xm <C-c> gc
+
+" Syntastic
+se statusline+=%#warningmsg#
+se statusline+=%{SyntasticStatuslineFlag()}
+se statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_python_exec = '/usr/bin/python3'
