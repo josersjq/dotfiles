@@ -14,6 +14,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'mattn/emmet-vim'
 Plugin 'Raimondi/delimitMate'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " Colorscheme
 Plugin 'morhetz/gruvbox'
