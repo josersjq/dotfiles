@@ -65,6 +65,16 @@ se incsearch
 " Tab Control
 se ts=4 sw=4 et ai sts=4
 
+" Indentions
+nn <Tab> >>_
+nn <S-Tab> <<_
+ino <S-Tab> <C-D>
+vn <Tab> >gv
+vn <S-Tab> <gv
+
+" Paste mode
+se pastetoggle=<F2>
+
 " Python Highly Recommends in https://code.djangoproject.com/wiki/UsingVimWithDjango
 au FileType python se sw=4
 au FileType python se ts=4
