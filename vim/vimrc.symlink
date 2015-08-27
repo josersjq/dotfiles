@@ -1,46 +1,51 @@
-" Vundle
-se nocompatible
-filetype off
-
-se rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
+" vim-plug
+call plug#begin('~/.vim/plugged')
 
 " Colorscheme
-Plugin 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 
 " Utilites
-Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'vim-scripts/gitignore'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'terryma/vim-expand-region'
-Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-repeat'
-Plugin 'mattn/emmet-vim'
-Plugin 'Raimondi/delimitMate'
-Plugin 'scrooloose/syntastic'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree' , { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons'
+Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-repeat'
+Plug 'garbas/vim-snipmate'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'ervandew/supertab'
+Plug 'mtth/scratch.vim'
+Plug 'vim-scripts/gitignore'
+Plug 'terryma/vim-expand-region'
+Plug 'tpope/vim-fugitive'
+Plug 'bling/vim-airline'
+Plug 'scrooloose/syntastic'
+
+Plug 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " distraction-free writing
+Plug 'junegunn/limelight.vim', { 'on': 'Limelight' } " focus tool. Good for presentating with vim
 
 " HTML
-Plugin 'othree/html5.vim'
+Plug 'mattn/emmet-vim', { 'for': 'html' }
+Plug 'othree/html5.vim', { 'for': 'html' }
+Plug 'gregsexton/MatchTag', { 'for': 'html' }
 
 " Javascript
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
+Plug 'moll/vim-node', { 'for': 'javascript'}
+Plug 'mxw/vim-jsx', { 'for': 'jsx' }
+Plug 'elzr/vim-json', { 'for': 'json' }
 
 " CSS
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'ap/vim-css-color'
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+Plug 'ap/vim-css-color', { 'for': 'css' }
+Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 " General Settings
 syntax on
@@ -84,9 +89,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
-" Command Line to quit
-map q: :q
-
 " Save file
 nn <Leader>w :w<CR>
 
@@ -105,6 +107,13 @@ no <Leader>R :so ~/.vimrc<CR>
 
 " Disable .viminfo
 se viminfo="NONE"
+
+" disable EX mode
+noremap Q <NOP>
+
+" Command Line to quit
+map q: :q
+
 
 " Search
 se hlsearch
@@ -194,7 +203,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#whitespace#enabled = 0
-se laststatus=2 " set airline to appear at status all time 
+se laststatus=2 " set airline to appear at status all time
 
 " Emmet
 " imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
