@@ -77,6 +77,9 @@ ino jj <esc>
 
 se clipboard=unnamed
 
+" Automatically removing all trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
 " Expand Visual mode
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
