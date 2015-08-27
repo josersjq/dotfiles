@@ -37,3 +37,16 @@ alias dja='workon django'
 alias nu='nvm use'
 alias nd='nvm deactivate'
 alias n1='nvm use 0.12.7'
+
+# to resume suspended jobs.
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
