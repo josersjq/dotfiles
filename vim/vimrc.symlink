@@ -6,6 +6,11 @@ se rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+
+" Colorscheme
+Plugin 'morhetz/gruvbox'
+
+" Utilites
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/gitignore'
@@ -20,8 +25,16 @@ Plugin 'mattn/emmet-vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
 
-" Colorscheme
-Plugin 'morhetz/gruvbox'
+" HTML
+Plugin 'othree/html5.vim'
+
+" Javascript
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
+" CSS
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'ap/vim-css-color'
 
 call vundle#end()
 filetype plugin indent on
@@ -40,21 +53,26 @@ se showmatch
 se visualbell
 se textwidth=100
 se cursorline
+se number
 se showcmd
 
 se listchars=tab:——,trail:·,extends:>,precedes:<,nbsp:%
 se list
 se linebreak
-se showbreak=...
+se showbreak=…
 
-set foldmethod=indent   
-set foldnestmax=10
-set nofoldenable
-set foldlevel=2
-nnoremap <space> za
-vnoremap <space> zf
+se foldmethod=syntax
+se foldnestmax=10
+se nofoldenable
+se foldlevel=2
+nn <space> za
+vn <space> zf
 
 let mapleader="\<Space>"
+
+ino jj <esc>
+
+se clipboard=unnamed
 
 " Expand Visual mode
 vmap v <Plug>(expand_region_expand)
@@ -78,7 +96,6 @@ no <Leader>c :noh<CR>
 " Reload vimrc
 no <Leader>R :so ~/.vimrc<CR>
 
-se number
 
 " Disable .viminfo
 se viminfo="NONE"
@@ -154,7 +171,7 @@ let g:ctrlp_show_hidden=1
 " let g:ctrlp_custom_ignore = '.git\|node_modules\|bower_components\|__pycache__\|tmp\'
 let g:ctrlp_use_caching = 0
 if executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor
+    se grepprg=ag\ --nogroup\ --nocolor
 
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 else
@@ -171,7 +188,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#whitespace#enabled = 0
-" se laststatus=2 " set airline to appear at status all time 
+se laststatus=2 " set airline to appear at status all time 
 
 " Emmet
 " imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
@@ -192,3 +209,4 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_python_exec = '/usr/bin/python3'
+
