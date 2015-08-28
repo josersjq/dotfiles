@@ -168,6 +168,7 @@ nn td :tabclose<CR>
 " NERDTree
 let g:NERDTreeQuitOnOpen=0
 let NERDTreeShowHidden=1
+let NERDTreeIgnore = ['\.pyc$']
 let g:NERDTreeWinPos = "right"
 nm <leader>n :NERDTreeToggle<CR>
 
