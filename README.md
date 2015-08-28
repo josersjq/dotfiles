@@ -17,4 +17,4 @@ In pursuit of Configuration Happyness!
 
 ## Vim Plugins
 
-Vim plugins are managed with [vim-plug](https://github.com/junegunn/vim-plug). To install run `vim +PlugInstall`
+Vim plugins are managed with [vim-plug](https://github.com/junegunn/vim-plug). To install run `vim +PlugInstall +qall`
