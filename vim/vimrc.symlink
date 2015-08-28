@@ -71,7 +71,8 @@ se visualbell
 se textwidth=100
 se cursorline
 se number
-se showcmd
+se noshowcmd
+se noshowmode
 
 se listchars=tab:——,trail:·,extends:>,precedes:<,nbsp:%
 se list
@@ -212,6 +213,7 @@ function! s:goyo_enter()
   if exists('$TMUX')
     silent !tmux set status off
   endif
+  set scrolloff=999
   se linespace=7
   se fullscreen
   let g:NERDTreeQuitOnOpen=1
@@ -222,6 +224,7 @@ function! s:goyo_leave()
   if exists('$TMUX')
     silent !tmux set status on
   endif
+  se scrolloff=5
   se nofullscreen
   se linespace=0
   let g:NERDTreeQuitOnOpen=0
