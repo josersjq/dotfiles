@@ -221,24 +221,22 @@ let g:limelight_paragraph_span = 1
 let g:limelight_priority = -1
 
 function! s:goyo_enter()
-if has('gui_running')
-    set fullscreen
-    set background=light
-    set linespace=7
-  elseif exists('$TMUX')
+  if exists('$TMUX')
     silent !tmux set status off
-endif
- Limelight
+  endif
+  set linespace=7
+  set fullscreen
+  let g:NERDTreeQuitOnOpen=1
+  Limelight
 endfunction
 
 function! s:goyo_leave()
-  if has('gui_running')
-    set nofullscreen
-    set background=dark
-    set linespace=0
-  elseif exists('$TMUX')
+  if exists('$TMUX')
     silent !tmux set status on
   endif
+  set nofullscreen
+  set linespace=0
+  let g:NERDTreeQuitOnOpen=0
   Limelight!
 endfunction
 
