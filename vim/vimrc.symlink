@@ -187,8 +187,6 @@ let g:airline#extensions#whitespace#enabled = 0
 se laststatus=2 " set airline to appear at status all time
 
 " Emmet
-" imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-" let g:user_emmet_leader_key='<C-E>'
 let user_emmet_expandabbr_key='<c-e>'
 
 " vim-commentary to Ctrl+C
@@ -214,8 +212,8 @@ function! s:goyo_enter()
   if exists('$TMUX')
     silent !tmux set status off
   endif
-  set linespace=7
-  set fullscreen
+  se linespace=7
+  se fullscreen
   let g:NERDTreeQuitOnOpen=1
   Limelight
 endfunction
@@ -224,8 +222,8 @@ function! s:goyo_leave()
   if exists('$TMUX')
     silent !tmux set status on
   endif
-  set nofullscreen
-  set linespace=0
+  se nofullscreen
+  se linespace=0
   let g:NERDTreeQuitOnOpen=0
   Limelight!
 endfunction
