@@ -1,32 +1,40 @@
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
-" Colorscheme
-Plug 'morhetz/gruvbox'
-
 " Utilites
 Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/nerdtree' , { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdtree' , { 'on': 'NERDTreeToggle' } | Plug 'ryanoasis/vim-devicons'
 Plug 'Raimondi/delimitMate'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'tpope/vim-repeat'
 Plug 'garbas/vim-snipmate'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
-Plug 'ervandew/supertab'
-Plug 'mtth/scratch.vim'
-Plug 'vim-scripts/gitignore'
-Plug 'terryma/vim-expand-region'
-Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-airline'
+Plug 'vim-scripts/gitignore'
 Plug 'scrooloose/syntastic'
 
+" Edit
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
+Plug 'terryma/vim-expand-region'
+Plug 'ervandew/supertab'
+
+" Git
+Plug 'tpope/vim-fugitive'
+
+" Colorscheme
+Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " distraction-free writing
 Plug 'junegunn/limelight.vim', { 'on': 'Limelight' } " focus tool. Good for presentating with vim
+
+" Colors
+Plug 'tomasr/molokai'
+Plug 'chriskempson/vim-tomorrow-theme'
+
+" Tmux
+Plug 'christoomey/vim-tmux-navigator'
 
 " HTML
 Plug 'mattn/emmet-vim', { 'for': 'html' }
@@ -51,7 +59,7 @@ call plug#end()
 syntax on
 se t_Co=256
 se background=dark
-colorscheme gruvbox
+colo seoul256
 
 se encoding=utf-8
 se ttyfast
@@ -76,7 +84,8 @@ se foldlevel=2
 nn <space> za
 vn <space> zf
 
-let mapleader="\<Space>"
+let mapleader=' '
+let maplocalleader = ' '
 
 ino jj <esc>
 
@@ -98,10 +107,6 @@ no <Leader>c :noh<CR>
 
 " Reload vimrc
 no <Leader>R :so ~/.vimrc<CR>
-
-
-" Disable .viminfo
-se viminfo="NONE"
 
 " disable EX mode
 noremap Q <NOP>
@@ -147,6 +152,9 @@ ino <left> <nop>
 ino <right> <nop>
 
 " Split Settings
+nnoremap > <c-w>w
+nnoremap < <c-w>W
+
 se splitright
 se splitbelow
 
@@ -206,4 +214,12 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_python_exec = '/usr/bin/python3'
+
+" Limelight
+nmap <Leader>l :Limelight!!<CR>
+xmap <Leader>l :Limelight!!<CR>
+
+" Goyo-Limelight Integration
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
