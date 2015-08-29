@@ -57,6 +57,8 @@ Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 call plug#end()
 
 " General Settings
+filetype on
+filetype plugin indent off
 syntax on
 se t_Co=256
 se background=dark
