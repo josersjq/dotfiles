@@ -21,9 +21,11 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
 Plug 'terryma/vim-expand-region'
 Plug 'ervandew/supertab'
+Plug 'godlygeek/tabular'
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " Colorscheme
 Plug 'junegunn/seoul256.vim'
@@ -168,6 +170,10 @@ nn tl :tabnext<CR>
 nn tn :tabnew<CR>
 nn tt :tabedit<CR>
 nn td :tabclose<CR>
+
+" gitgutter
+let g:gitgutter_max_signs = 500
+let g:gitgutter_map_keys = 0
 
 " NERDTree
 let g:NERDTreeQuitOnOpen=0
