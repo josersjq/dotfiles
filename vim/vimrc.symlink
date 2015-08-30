@@ -144,8 +144,9 @@ se nobackup
 se nowritebackup
 se noswapfile
 
-" Normal mode map ; to :
+" Normal/Visual mode map ; to :
 nn ; :
+vn ; :
 
 " Disalbe Arrow keys
 map <up>    <nop>
@@ -249,3 +250,9 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " Ignores
 source ~/.vim/ignores/ignore.vim
+
+" Tabular
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:<CR>
+vmap <Leader>a: :Tabularize /:<CR>
