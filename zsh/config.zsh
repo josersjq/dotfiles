@@ -22,3 +22,4 @@ setopt APPEND_HISTORY
 
 setopt COMPLETE_ALIASES
 
+bindkey -e
