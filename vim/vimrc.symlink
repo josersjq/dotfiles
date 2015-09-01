@@ -60,7 +60,7 @@ call plug#end()
 
 " General Settings
 filetype on
-filetype plugin indent off
+filetype plugin indent on
 syntax on
 se t_Co=256
 se background=dark
