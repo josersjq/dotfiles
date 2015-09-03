@@ -50,3 +50,6 @@ fancy-ctrl-z () {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
+
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
