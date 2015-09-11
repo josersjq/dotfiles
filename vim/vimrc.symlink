@@ -136,7 +136,8 @@ vn <S-Tab> <gv
 se pastetoggle=<F2>
 
 " Python Highly Recommends in https://code.djangoproject.com/wiki/UsingVimWithDjango
-au FileType python se sts=4 colorcolumn=80,100 ft=python.django " For SnipMate
+au FileType python se sw=4 ts=4 sts=4 ai et
+au FileType python se colorcolumn=80,100 ft=python.django " For SnipMate
 au FileType html se ft=htmldjango.html " For SnipMate
 
 " Disable Backup files
