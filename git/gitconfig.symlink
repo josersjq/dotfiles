@@ -1,5 +1,5 @@
 [user]
-    name = Jose San Juan
+    name = Jose
     email = sanjuanjojo@gmail.com
 [github]
     user = josersjq
@@ -37,3 +37,5 @@
 
     us = reset HEAD
 
+[gitlab]
+    user = josersjq
