@@ -160,9 +160,6 @@ ino <left> <nop>
 ino <right> <nop>
 
 " Split Settings
-nnoremap > <c-w>w
-nnoremap < <c-w>W
-
 se splitright
 se splitbelow
 

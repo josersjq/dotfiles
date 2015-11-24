@@ -56,3 +56,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 VIRTUAL_ENV_DISABLE_PROMPT=1
+
+source $HOME/.aliases
