@@ -30,9 +30,6 @@ alias tns='tmux new-session -s'
 
 # virtualenv
 alias da='deactivate'
-# if existing virtualenv!
-alias scr='workon scrapy'
-alias dja='workon django'
 # nvm
 alias nu='nvm use'
 alias nd='nvm deactivate'
