@@ -60,5 +60,5 @@ precmd() {
     print -P "%{$fg_bold[white][%F{cyan}%~%f%F{white}]%f"
 }
 
-export PROMPT='%(?.%F{119}.%F{red})➤%f  '
+export PROMPT='%(?.%F{119}.%F{red})$%f '
 export RPROMPT='`suspended_jobs``__virtualenv``__node``needs_push``git_dirty`%F{241}$vcs_info_msg_0_%f'
