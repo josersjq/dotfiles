@@ -2,7 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 " Utilites
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'scrooloose/nerdtree' , { 'on': 'NERDTreeToggle' } | Plug 'ryanoasis/vim-devicons'
 Plug 'Raimondi/delimitMate'
