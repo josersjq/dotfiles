@@ -14,9 +14,9 @@ alias ...='cd ../..'
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-alias l="ls -lFh ${colorflag}"
-alias la="ls -AF ${colorflag}"
-alias ll="ls -lah ${colorflag}"
+alias l="ls -lFh ${colorflag} --hide='*.pyc'"
+alias la="ls -AF ${colorflag} --hide='*.pyc'"
+alias ll="ls -lah ${colorflag} --hide='*.pyc'"
 
 alias apt-get="sudo apt-get"
 
