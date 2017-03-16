@@ -1,0 +1,163 @@
+" ##### GENERAL SETTINGS
+syntax on
+filetype plugin indent on
+set encoding=utf-8
+
+set showmode
+set number
+set linebreak
+set showbreak=+++
+set textwidth=100
+set showmatch
+set visualbell
+set hlsearch
+set smartcase
+set ignorecase
+set incsearch
+set autoindent
+set expandtab
+set shiftwidth=4
+set smartindent
+set smarttab
+set softtabstop=4
+set ruler
+set undolevels=1000
+set backspace=indent,eol,start
+set cursorline
+set colorcolumn=80,100
+set listchars=eol:¬,tab:——,trail:·,extends:>,precedes:<,nbsp:%
+set list
+set ff=unix
+set ffs=unix,dos,mac
+set noshowcmd
+set noshowmode
+
+" Backups and swap management
+if !isdirectory(expand("~/sys/tmp"))
+    call mkdir(expand("~/sys/tmp"), "p")
+endif
+set backup
+set backupdir=~/sys/tmp
+set dir=~/sys/tmp
+
+" Switch ESC with `jk`
+inoremap jk <ESC>
+
+" ##### END GENERAL SETTINGS
+
+" ##### UTILITY SETTINGS
+
+" Load pathogen and plugins if exists
+if !empty(glob(expand("~/.vim/autoload"))) && filereadable(expand("~/.vim/bundle"))
+
+    filetype off
+    execute pathogen#infect()
+    call pathogen#infect()
+    call pathogen#helptags()
+    filetype plugin indent on
+
+endif
+
+" Auto-reload of .vimrc
+autocmd! bufwritepost ~/.vimrc source %
+
+" Fix for pasting in insert mode
+set pastetoggle=<F2>
+
+" Map yanks to system clipboard
+" set clipboard=unnamedplus
+
+" Always switch to the current file's directory
+autocmd BufEnter * silent! lcd %:p:h
+
+" ##### END UTILITY SETTINGS
+
+" ##### FILE-TYPES SETTINGS
+
+" Kivy atlas file support
+au BufNewFile,BufRead *.atlas set filetype=json
+
+" Kivy kv file support
+au BufNewFile,BufRead *.kv set filetype=yaml
+
+" Kivy markdown support
+au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead *.mdown set filetype=markdown
+
+" Vagrantfile support
+au BufNewFile,BufRead Vagrantfile set filetype=ruby
+
+" ##### END FILE-TYPES SETTINGS
+
+" ##### LEADER SHORTCUTS SETTINGS
+" Set leader key to `,`
+let mapleader = "\<space>"
+
+" Save the file as sudo then reload it manually with `:edit!`
+noremap <Leader>W :silent w !sudo tee % > /dev/null
+
+" Clear the last search highlights
+noremap <Leader>c :noh<CR>
+
+" Reload vimrc
+noremap <Leader>R :so ~/.vimrc<CR>
+
+" Save file
+nn <Leader>w :w<CR>
+
+" ##### END LEADER SHORTCUTS SETTINGS
+
+" ##### SPLIT SCREEN NAVIGATION (CTRL+hjkl)
+map <C-J> <C-W>j<C-W>_
+map <C-K> <C-W>k<C-W>_
+map <C-H> <C-W>h<C-W>_
+map <C-L> <C-W>l<C-W>_
+" ##### END SPLIT SCREEN NAVIGATION (CTRL+hjkl)
+
+" ##### TAB NAVIGATION
+nnoremap th :tabprev<CR>
+nnoremap tl :tabnext<CR>
+nnoremap tn :tabnew<CR>
+nnoremap tt :tabedit<CR>
+nnoremap td :tabclose<CR>
+" ##### END TAB NAVIGATION
+
+" ##### OWN CONFIGURATIONS
+set t_Co=16
+au FileType python se sw=4 ts=4 sts=4 ai et
+hi CursorLine ctermbg=8 cterm=None
+hi ColorColumn ctermbg=8
+
+" Disable Arrow Keys
+map <up>    <nop>
+map <down>  <nop>
+map <left>  <nop>
+map <right> <nop>
+ino <up>    <nop>
+ino <down>  <nop>
+ino <left>  <nop>
+ino <right> <nop>
+
+execute pathogen#infect()
+
+" NERDTree
+let g:NERDTreeWinPos = "left"
+let NERDTreeQuitOnOpen = 1
+let NERDTreeShowHidden = 1
+let NERDTreeIgnore = ['\.pyc$']
+nm <Leader>n :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+" Airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'hybridline'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#whitespace#enabled = 0
+set laststatus=2
