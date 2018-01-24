@@ -39,12 +39,11 @@
             {
                 "name": "brew",
                 "recipe": {
-                    "linux": [],
                     "darwin": [
                         "ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\""
-                    ]
+                    ],
+                    "linux": []
                 }
-
             },
             {
                 "name": "python",
@@ -142,12 +141,6 @@
             "recipe": {}
         },
         {
-            "depends-on": [],
-            "name": "vim-minimap",
-            "pkg-url": "https://github.com/severin-lemaignan/vim-minimap.git",
-            "recipe": {}
-        },
-       {
             "depends-on": [
                 {
                     "name": "flake8",
