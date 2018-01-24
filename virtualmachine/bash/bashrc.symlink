@@ -221,3 +221,9 @@ if [ -f /usr/bin/virtualenvwrapper_lazy.sh ]; then
 elif [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
   source /usr/local/bin/virtualenvwrapper_lazy.sh
 fi
+
+export PATH=/home/jose/bin:/home/jose/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/jose/.vimpkg/bin:/home/jose/.vimpkg/bin
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

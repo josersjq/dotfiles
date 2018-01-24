@@ -3,3 +3,4 @@ source ~/.bashrc
 rm ~/.vimpkg/vim_config.json
 ln -s $1/$2/vim/vim_config.json ~/.vimpkg/vim_config.json
 apt-vim install -y
+git checkout .
