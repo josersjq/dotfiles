@@ -8,6 +8,8 @@ In pursuit of configuration happiness
 + bash configuration
 + vim configuration
 + tmux configuration
++ config configuration
++ apt_vim configuration
 
 ### desktop
 + #TODO
