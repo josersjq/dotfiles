@@ -4,7 +4,6 @@
             {
                 "name": "vim",
                 "recipe": {
-                    "darwin": [],
                     "linux": [
                         "sudo apt-get install -y vim"
                     ]
@@ -13,7 +12,6 @@
             {
                 "name": "git",
                 "recipe": {
-                    "darwin": [],
                     "linux": [
                         "sudo apt-get install -y git"
                     ]
@@ -22,7 +20,7 @@
             {
                 "name": "pip",
                 "recipe": {
-                    "darwin": [
+                    "linux": [
                         "curl --silent -o get-pip.py https://bootstrap.pypa.io/get-pip.py",
                         "sudo -E python get-pip.py"
                     ]
@@ -31,8 +29,8 @@
             {
                 "name": "node",
                 "recipe": {
-                    "darwin": [
-                        "sudo apt install -y node npm"
+                    "linux": [
+                        "sudo apt install -y nodejs npm"
                     ]
                 }
             },
