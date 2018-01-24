@@ -1,9 +1,24 @@
 #!/bin/bash
 echo "Installing dotfiles..."
 
-source install/link.sh
+echo " Choose from"
 
-echo "Configuring zsh as default shell"
-chsh -s $(which zsh)
+select environment in virtualmachine desktop exit
+do
+	case $environment in
+	virtualmachine|desktop|exit)
+		break
+		;;
+	*)
+		echo "Invalid environment"
+		;;
+	esac
+done
 
-echo "Done!"
+if [ $environment = "exit" ]; then
+	exit 0
+else
+	source install/link.sh $environment
+fi
+
+echo "Successfuly installed $environment dotfiles"
