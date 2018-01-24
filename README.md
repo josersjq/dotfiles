@@ -1,20 +1,19 @@
 # Dotfiles
 
-In pursuit of Configuration Happyness!
+In pursuit of configuration happiness
 
 ## Contents
 
-+ zsh configuration
+### virtualmachine
++ bash configuration
 + vim configuration
 + tmux configuration
-+ git configuration
+
+### desktop
++ #TODO
 
 ## Install
 
 1. `git clone https://github.com/josersjq/dotfiles.git ~/.dotfiles`
 1. `cd ~/.dotfiiles`
 1. `./install.sh`
-
-## Vim Plugins
-
-Vim plugins are managed with [vim-plug](https://github.com/junegunn/vim-plug). To install run `vim +PlugInstall +qall`
