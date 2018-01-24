@@ -3,10 +3,10 @@ echo "Installing dotfiles..."
 
 echo " Choose from"
 
-select environment in virtualmachine desktop exit
+select environment in "virtualmachine" "exit"
 do
     case $environment in
-    virtualmachine|desktop|exit)
+    virtualmachine|exit)
             break
             ;;
     *)
@@ -19,7 +19,7 @@ if [ $environment = "exit" ]; then
     exit 0
 else
     source install/link.sh $environment
-    source install/apt-vim.sh
+    source install/apt-vim.sh $environment
 fi
 
-echo "Successfuly installed $environment dotfiles"
+echo "Successfuly installed $environment's configuration"
