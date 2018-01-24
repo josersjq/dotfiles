@@ -18,8 +18,8 @@ done
 if [ $environment = "exit" ]; then
     exit 0
 else
-    source install/link.sh $environment
-    source install/apt-vim.sh $environment
+    source install/link.sh $(pwd) $environment
+    source install/apt-vim.sh $(pwd) $environment
 fi
 
 echo "Successfuly installed $environment's configuration"
