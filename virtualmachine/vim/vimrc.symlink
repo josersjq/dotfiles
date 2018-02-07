@@ -129,7 +129,7 @@ nnoremap td :tabclose<CR>
 " ##### OWN CONFIGURATIONS
 set t_Co=16
 au FileType python se sw=4 ts=4 sts=4 ai et
-au FileType javascript se sw=4 ts=4 sts=4 ai et
+au FileType javascript se sw=2 ts=2 sts=2 ai et
 au FileType html se sw=2 ts=2 sts=2 ai et
 au FileType htmldjango se sw=2 ts=2 sts=2 ai et
 hi CursorLine ctermbg=8 cterm=None
