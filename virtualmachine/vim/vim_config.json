@@ -139,14 +139,6 @@
                             "pip install --user flake8"
                         ]
                     }
-                },
-                {
-                    "name": "eslint",
-                    "recipe": {
-                        "linux": [
-                            "npm install -g eslint"
-                        ]
-                    }
                 }
             ],
             "name": "ale",
