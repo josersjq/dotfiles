@@ -27,23 +27,6 @@
                 }
             },
             {
-                "name": "nvm",
-                "recipe": {
-                    "linux": [
-                        "curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash"
-                    ]
-                }
-            },
-            {
-                "name": "node",
-                "recipe": {
-                    "linux": [
-                        "nvm install node",
-                        "nvm install iojs"
-                    ]
-                }
-            },
-            {
                 "name": "brew",
                 "recipe": {
                     "darwin": [
