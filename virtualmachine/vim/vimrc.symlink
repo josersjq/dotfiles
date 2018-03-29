@@ -24,7 +24,9 @@ set undolevels=1000
 set backspace=indent,eol,start
 set cursorline
 set colorcolumn=80,100
-set listchars=eol:¬,tab:——,trail:·,extends:>,precedes:<,nbsp:%
+" set listchars=eol:¬,tab:——,trail:·,extends:>,precedes:<,nbsp:%
+set listchars=tab:——,trail:·,extends:>,precedes:<,nbsp:%
+set noeol
 set list
 set ff=unix
 set ffs=unix,dos,mac
