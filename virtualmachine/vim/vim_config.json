@@ -144,6 +144,12 @@
             "name": "ale",
             "pkg-url": "https://github.com/w0rp/ale.git",
             "recipe": {}
+        },
+        {
+            "depends-on": [],
+            "name": "typescript-vim",
+            "pkg-url": "https://github.com/leafgarland/typescript-vim.git",
+            "recipe": {}
         }
     ]
 }
