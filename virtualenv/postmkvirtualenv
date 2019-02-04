@@ -1,0 +1,21 @@
+#!/bin/bash
+# This hook is sourced after a new virtualenv is activated.
+
+cat >> $VIRTUAL_ENV/bin/postactivate <<'_EOF'
+export GEM_HOME="$VIRTUAL_ENV/gems"
+export GEM_PATH=""
+export OLD_PATH=$PATH
+export PATH=$PATH:"$GEM_HOME/bin"
+_EOF
+
+cat >> $VIRTUAL_ENV/bin/predeactivate <<'_EOF'
+unset GEM_HOME
+unset GEM_PATH
+export PATH=$OLD_PATH
+unset OLD_PATH
+_EOF
+
+
+source $VIRTUAL_ENV/bin/activate
+pip install nodeenv -q
+echo "Run: nodeenv -p -n system --with-npm or nodeenv -p --with-npm (latest stable node)"
